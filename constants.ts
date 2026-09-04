@@ -725,7 +725,7 @@ const rawCourseData: Omit<CourseData, 'units'> & { units: Omit<Unit, 'color' | '
     },
     {
         id: 'u2',
-        name: 'Unit 2: Cell Structure and Function',
+        name: 'Unit 2: Cells',
         examWeighting: '10-13%',
         classPeriods: '~14-16',
         keyUnderstanding: "The cell is the fundamental unit of life, with organelles performing specialized functions and contributing to compartmentalization. Cells use membranes to maintain distinct internal environments and control material exchange, which is vital for homeostasis. This unit is foundational for understanding cellular products, by-products, and energy/material exchange in later units.",

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Navigator from './components/Navigator';
 import ProgressTracker from './components/ProgressTracker';
+import ExamGuide from './components/ExamGuide';
 
-type Tab = 'navigator' | 'progress';
+type Tab = 'navigator' | 'progress' | 'exam';
 
 const App: React.FC = () => {
   const [tab, setTab] = useState<Tab>('navigator');
@@ -13,10 +14,11 @@ const App: React.FC = () => {
         <nav className="flex rounded-xl bg-slate-100 p-1" aria-label="AP Biology tools">
           <button className={`rounded-lg px-4 py-2 text-sm font-semibold ${tab === 'navigator' ? 'bg-white text-cyan-700 shadow-sm' : 'text-slate-600 hover:text-slate-950'}`} onClick={() => setTab('navigator')}>Daily Navigator</button>
           <button className={`rounded-lg px-4 py-2 text-sm font-semibold ${tab === 'progress' ? 'bg-white text-cyan-700 shadow-sm' : 'text-slate-600 hover:text-slate-950'}`} onClick={() => setTab('progress')}>CED Progress</button>
+          <button className={`rounded-lg px-4 py-2 text-sm font-semibold ${tab === 'exam' ? 'bg-white text-cyan-700 shadow-sm' : 'text-slate-600 hover:text-slate-950'}`} onClick={() => setTab('exam')}>AP Exam</button>
         </nav>
       </div>
     </header>
-    {tab === 'navigator' ? <Navigator /> : <ProgressTracker />}
+    {tab === 'navigator' ? <Navigator /> : tab === 'progress' ? <ProgressTracker /> : <ExamGuide />}
   </div>;
 };
 export default App;

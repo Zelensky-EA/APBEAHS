@@ -32,7 +32,6 @@ const UnitView: React.FC<UnitViewProps> = ({ unit, studentProgress, onStatusChan
         <h1 className="text-4xl font-extrabold mb-1" style={{color: unit.color}}>{unit.name}</h1>
         <div className="flex gap-4 text-sm text-slate-500">
             <span>Exam Weighting: <strong>{unit.examWeighting}</strong></span>
-            <span>Suggested Periods: <strong>{unit.classPeriods}</strong></span>
         </div>
       </header>
 

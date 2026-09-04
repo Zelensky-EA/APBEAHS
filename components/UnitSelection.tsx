@@ -38,7 +38,6 @@ const UnitSelection: React.FC<UnitSelectionProps> = ({ units, onSelectUnit, over
             <h2 className="text-2xl font-bold mb-2" style={{ color: unit.color }}>{unit.name}</h2>
             <div className="space-y-1">
                 <p className="text-sm text-slate-700"><strong>{unit.examWeighting}</strong> Exam Weighting</p>
-                <p className="text-sm text-slate-500">~{unit.classPeriods} Class Periods</p>
             </div>
           </button>
         ))}
