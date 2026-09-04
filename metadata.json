@@ -1,0 +1,6 @@
+{
+  "name": "AP Biology Progress Tracker (Light)",
+  "description": "An application for AP Biology students to track their understanding of key concepts, monitor progress through the curriculum, and prepare for the AP Exam. Features self-assessment tools, progress bars, and a comprehensive vocabulary guide.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
