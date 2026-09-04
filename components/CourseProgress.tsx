@@ -12,7 +12,10 @@ const unitColors = courseData.units.map(u => u.color);
 const CourseProgress: React.FC<CourseProgressProps> = ({ overallProgress, unitProgress }) => {
   return (
     <div className="bg-white/60 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-200 sticky top-4 z-20">
-      <h2 className="text-xl font-bold text-cyan-600 mb-2">AP Biology Exam Readiness</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <h2 className="text-xl font-bold text-cyan-600">AP Biology Exam Readiness</h2>
+        <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-bold text-cyan-800">2025 CED</span>
+      </div>
       <div className="flex items-center gap-4">
         <div className="relative w-24 h-24">
           <svg className="w-full h-full" viewBox="0 0 36 36">

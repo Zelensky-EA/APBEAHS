@@ -28,6 +28,7 @@ const UnitView: React.FC<UnitViewProps> = ({ unit, studentProgress, onStatusChan
   return (
     <div className="p-4 md:p-6 animate-fade-in">
       <header className="mb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-1">2025 AP Biology CED</p>
         <h1 className="text-4xl font-extrabold mb-1" style={{color: unit.color}}>{unit.name}</h1>
         <div className="flex gap-4 text-sm text-slate-500">
             <span>Exam Weighting: <strong>{unit.examWeighting}</strong></span>

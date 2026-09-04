@@ -14,8 +14,9 @@ const UnitSelection: React.FC<UnitSelectionProps> = ({ units, onSelectUnit, over
   return (
     <div className="p-4 md:p-8 w-full max-w-7xl mx-auto animate-fade-in">
       <header className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">AP Biology Progress Tracker</h1>
-        <p className="text-md md:text-lg text-slate-600 mt-2">Select a unit to begin tracking your progress and preparing for the exam.</p>
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-600 mb-2">Official 2025 Course Framework</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">AP Biology CED Progress</h1>
+        <p className="text-md md:text-lg text-slate-600 mt-2">Track your confidence across all eight units and every topic in the 2025 AP Biology CED.</p>
       </header>
 
       <div className="mb-10">
