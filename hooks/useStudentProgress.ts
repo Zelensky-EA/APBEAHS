@@ -46,6 +46,18 @@ export const useStudentProgress = () => {
   const updateProgress = useCallback((keyConceptId: string, status: ProgressStatus) => {
     setProgress(prev => ({ ...prev, [keyConceptId]: status }));
   }, []);
+
+  const resetUnitProgress = useCallback((unitId: string) => {
+    const unit = courseData.units.find(item => item.id === unitId);
+    if (!unit) return;
+    setProgress(prev => {
+      const next = { ...prev };
+      unit.topics.forEach(topic => topic.iCanStatements.forEach(iCan => iCan.keyConcepts.forEach(kc => {
+        next[kc.id] = ProgressStatus.Unselected;
+      })));
+      return next;
+    });
+  }, []);
   
   const calculateICanProgress = useCallback((iCan: ICanStatement): number => {
     if (iCan.keyConcepts.length === 0) return 0;
@@ -83,6 +95,7 @@ export const useStudentProgress = () => {
   return {
     progress,
     updateProgress,
+    resetUnitProgress,
     calculateICanProgress,
     unitProgressCalculations,
     overallCourseProgress,

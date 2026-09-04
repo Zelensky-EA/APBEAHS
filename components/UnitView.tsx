@@ -8,6 +8,7 @@ interface UnitViewProps {
   unit: UnitType;
   studentProgress: Record<string, ProgressStatus>;
   onStatusChange: (conceptId: string, status: ProgressStatus) => void;
+  onResetUnit: () => void;
   calculateICanProgress: (iCan: ICanStatement) => number;
   onVocabClick: (term: string) => void;
   unitProgress: number;
@@ -24,15 +25,16 @@ const InfoCard: React.FC<{title: string, children: React.ReactNode, className?: 
     );
 };
 
-const UnitView: React.FC<UnitViewProps> = ({ unit, studentProgress, onStatusChange, calculateICanProgress, onVocabClick, unitProgress }) => {
+const UnitView: React.FC<UnitViewProps> = ({ unit, studentProgress, onStatusChange, onResetUnit, calculateICanProgress, onVocabClick, unitProgress }) => {
   return (
     <div className="p-4 md:p-6 animate-fade-in">
-      <header className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-1">2025 AP Biology CED</p>
+      <header className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div><p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-1">2025 AP Biology CED</p>
         <h1 className="text-4xl font-extrabold mb-1" style={{color: unit.color}}>{unit.name}</h1>
         <div className="flex gap-4 text-sm text-slate-500">
             <span>Exam Weighting: <strong>{unit.examWeighting}</strong></span>
-        </div>
+        </div></div>
+        <button onClick={() => { if (window.confirm(`Reset all self-assessments for ${unit.name}?`)) onResetUnit(); }} className="w-fit rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-600 shadow-sm transition hover:border-red-300 hover:bg-red-50 hover:text-red-700">Reset this unit</button>
       </header>
 
       <div className="mb-8 bg-white/50 p-4 rounded-lg border border-slate-200/50">
